@@ -167,10 +167,10 @@ function Index() {
           </figure>
 
           <div className="lg:pl-10">
-            <p className="eyebrow">Not just song coaching</p>
-            <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">We build the instrument.</h2>
+            <p className="eyebrow">Meet your coach</p>
+            <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">Serious ears. Serious standards. Serious results.</h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Understand how your voice works. Train it with precision. Apply it under real performance pressure. The goal is not one good lesson—it is a reliable, world-class voice you own.
+              Dallas Voice Coach is led by a teacher who understands the vocal mechanism—and knows how to make complex technique usable. You are not handed generic exercises. Your voice is heard, diagnosed, and trained toward a measurable outcome.
             </p>
             <ul className="mt-10 grid gap-4 sm:grid-cols-2">
               {outcomes.map((outcome) => (
