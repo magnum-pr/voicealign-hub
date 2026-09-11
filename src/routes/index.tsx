@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, Check, Mic2, Play } from "lucide-react";
 
+import ownerImage from "@/assets/dvc-owner.jpg";
 import vocalistImage from "@/assets/dvc-vocalist.jpg";
 
 export const Route = createFileRoute("/")({
