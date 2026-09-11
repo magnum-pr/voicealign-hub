@@ -1,8 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, Check, Mic2, Play } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Check, Phone, Quote } from "lucide-react";
 
-import ownerImage from "@/assets/dvc-owner.jpg";
+import davidImage from "@/assets/dvc-david.jpg";
 import vocalistImage from "@/assets/dvc-vocalist.jpg";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -11,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Results-oriented vocal coaching in Dallas for adult singers, young artists, and working professionals.",
+          "Results-oriented vocal coaching in Plano and Dallas–Fort Worth with David Houston. Build range, power, and a coordinated voice you can rely on.",
       },
       { property: "og:title", content: "Dallas Voice Coach | Build a World-Class Voice" },
       {
@@ -49,87 +51,110 @@ const pathways = [
 const outcomes = [
   "Power without pushing",
   "High notes without fear",
-  "A connected, balanced range",
+  "A connected, coordinated range",
   "Technique that holds under pressure",
+];
+
+const credentials = [
+  { value: "2012", label: "Founded in DFW" },
+  { value: "100s", label: "Students coached" },
+  { value: "20 yrs", label: "Studied under Arthur Peters" },
 ];
 
 function Index() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <header className="absolute inset-x-0 top-0 z-30 border-b border-border/70">
-        <div className="mx-auto flex h-20 max-w-[90rem] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#top" className="group flex items-center gap-3" aria-label="Dallas Voice Coach home">
-            <span className="flex size-10 items-center justify-center border border-gold/60 text-gold transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
-              <Mic2 className="size-5" aria-hidden="true" />
-            </span>
-            <span className="font-display text-2xl uppercase leading-none">Dallas Voice Coach</span>
-          </a>
-          <nav className="hidden items-center gap-8 text-xs font-semibold uppercase text-muted-foreground md:flex" aria-label="Main navigation">
-            <a href="#pathways" className="transition-colors hover:text-gold">Coaching</a>
-            <a href="#method" className="transition-colors hover:text-gold">The Method</a>
-            <a href="#proof" className="transition-colors hover:text-gold">Results</a>
-          </nav>
-          <a href="#consultation" className="border border-gold bg-gold px-5 py-3 text-xs font-bold uppercase text-gold-foreground transition-colors hover:bg-gold-bright">
-            Book a consultation
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <section id="top" className="relative min-h-[760px] border-b border-border lg:min-h-[900px]">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[54%]">
-          <img
-            src={vocalistImage}
-            alt="Vocalist performing at a professional studio microphone"
-            width={1200}
-            height={1600}
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-hero-veil" aria-hidden="true" />
-        </div>
-
-        <div className="relative z-10 mx-auto flex min-h-[760px] max-w-[90rem] items-end px-5 pb-16 pt-36 sm:px-8 lg:min-h-[900px] lg:items-center lg:px-12 lg:pb-24 lg:pt-28">
-          <div className="max-w-3xl">
+      {/* HERO — the coach is the hero card */}
+      <section className="relative border-b border-border py-16 lg:py-24">
+        <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-12">
+          <div>
             <div className="mb-6 flex items-center gap-4 text-xs font-semibold uppercase text-silver">
               <span className="h-px w-12 bg-gold" />
-              Dallas / Fort Worth
+              Plano · Dallas / Fort Worth
             </div>
-            <h1 className="max-w-2xl font-display text-[4.6rem] uppercase leading-[0.83] sm:text-[6.5rem] lg:text-[8.75rem]">
+            <h1 className="font-display text-[4.4rem] uppercase leading-[0.83] sm:text-[6.2rem] lg:text-[7.6rem]">
               Build a voice that <span className="text-gold">commands.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-silver sm:text-xl">
-              Results-oriented vocal coaching for stage, studio, and every room that matters.
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-silver sm:text-xl">
+              Results-oriented vocal coaching with David Houston—founder of Dallas Voice Coach and the
+              instructor behind hundreds of Texas voices.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
-              <a href="#consultation" className="inline-flex h-14 items-center gap-3 bg-foreground px-7 text-sm font-bold uppercase text-background transition-colors hover:bg-gold">
-                Find your starting point <ArrowRight className="size-4" aria-hidden="true" />
+            <div className="mt-9 flex flex-wrap items-center gap-5">
+              <a
+                href="tel:+12143171090"
+                className="inline-flex h-14 items-center gap-3 bg-gold px-7 text-sm font-bold uppercase text-gold-foreground transition-colors hover:bg-gold-bright"
+              >
+                <Phone className="size-4" aria-hidden="true" /> Call 214-317-1090
               </a>
-              <a href="#method" className="inline-flex h-14 items-center gap-3 border-b border-silver/60 text-sm font-semibold uppercase text-foreground transition-colors hover:border-gold hover:text-gold">
-                <Play className="size-4 fill-current" aria-hidden="true" /> See the method
-              </a>
+              <Link
+                to="/services"
+                className="inline-flex h-14 items-center gap-3 border-b border-silver/60 text-sm font-semibold uppercase transition-colors hover:border-gold hover:text-gold"
+              >
+                See the process <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
             </div>
-          </div>
-        </div>
 
-        <a href="#pathways" aria-label="Explore coaching pathways" className="absolute bottom-0 right-0 z-20 hidden h-20 w-20 items-center justify-center border-l border-t border-border bg-background text-silver transition-colors hover:text-gold lg:flex">
-          <ArrowDown className="size-5" aria-hidden="true" />
-        </a>
+            <dl className="mt-12 grid gap-6 border-t border-border pt-8 sm:grid-cols-3">
+              {credentials.map((item) => (
+                <div key={item.label}>
+                  <dt className="font-display text-4xl text-gold">{item.value}</dt>
+                  <dd className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{item.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <figure className="relative border border-border bg-elevated">
+            <img
+              src={davidImage}
+              alt="David Houston, founder and lead vocal coach at Dallas Voice Coach"
+              width={818}
+              height={1022}
+              className="h-full max-h-[42rem] w-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-owner-veil" aria-hidden="true" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
+              <p className="text-xs font-bold uppercase text-gold">Founder & managing director</p>
+              <p className="mt-2 font-display text-5xl uppercase leading-none">David Houston</p>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-silver">
+                Proprietary vocal concepts, developed over three decades on Texas stages and in the studio.
+              </p>
+              <Link
+                to="/about"
+                className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase text-foreground transition-colors hover:text-gold"
+              >
+                Meet the team <ArrowRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
-      <section id="pathways" className="border-b border-border bg-surface py-24 lg:py-32">
+      {/* PATHWAYS */}
+      <section className="border-b border-border bg-surface py-24 lg:py-32">
         <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <div>
               <p className="eyebrow">Coaching pathways</p>
-              <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">Where do you want your voice to take you?</h2>
+              <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">
+                Where do you want your voice to take you?
+              </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground lg:justify-self-end">
-              Different voices need different work. Start with the outcome that matters to you, then build a plan around your instrument.
+              Different voices need different work. Start with the outcome that matters to you, then build a
+              plan around your instrument.
             </p>
           </div>
 
           <div className="mt-16 grid border-l border-t border-border md:grid-cols-3">
             {pathways.map((pathway) => (
-              <a key={pathway.number} href="#consultation" className="group flex min-h-80 flex-col border-b border-r border-border p-7 transition-colors hover:bg-elevated sm:p-9">
+              <Link
+                key={pathway.number}
+                to="/services"
+                className="group flex min-h-80 flex-col border-b border-r border-border p-7 transition-colors hover:bg-elevated sm:p-9"
+              >
                 <span className="font-display text-3xl text-gold">{pathway.number}</span>
                 <div className="mt-auto">
                   <h3 className="font-display text-4xl uppercase">{pathway.title}</h3>
@@ -139,86 +164,110 @@ function Index() {
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="method" className="relative border-b border-border py-24 lg:py-36">
-        <div className="mx-auto grid max-w-[90rem] gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-12">
-          <figure className="relative overflow-hidden border border-border bg-elevated">
-            <img
-              src={ownerImage}
-              alt="The founder of Dallas Voice Coach"
-              width={1200}
-              height={810}
-              loading="lazy"
-              className="h-full min-h-[480px] w-full object-cover object-center grayscale"
-            />
-            <div className="absolute inset-0 bg-owner-veil" aria-hidden="true" />
-            <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-7 sm:p-10">
-              <div>
-                <p className="text-xs font-bold uppercase text-gold">Founder & lead coach</p>
-                <p className="mt-3 max-w-sm font-display text-5xl uppercase leading-[0.9]">The authority behind the method.</p>
-              </div>
-              <Mic2 className="mb-2 size-8 shrink-0 text-gold" aria-hidden="true" />
-            </figcaption>
-          </figure>
-
-          <div className="lg:pl-10">
-            <p className="eyebrow">Meet your coach</p>
-            <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">Serious ears. Serious standards. Serious results.</h2>
+      {/* METHOD */}
+      <section className="relative border-b border-border py-24 lg:py-32">
+        <div className="mx-auto grid max-w-[90rem] gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-12">
+          <div>
+            <p className="eyebrow">The method</p>
+            <h2 className="mt-4 font-display text-6xl uppercase leading-none sm:text-7xl">
+              We build the coordinated voice.
+            </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Dallas Voice Coach is led by a teacher who understands the vocal mechanism—and knows how to make complex technique usable. You are not handed generic exercises. Your voice is heard, diagnosed, and trained toward a measurable outcome.
+              Upper and lower registers are first developed in isolation, then balanced into a single
+              coordinated voice—the trait every world-class singer shares. Every step is explained and
+              illustrated with the coach's own voice, so you build the concept in your mind as fast as you
+              build it in your muscles.
             </p>
             <ul className="mt-10 grid gap-4 sm:grid-cols-2">
               {outcomes.map((outcome) => (
-                <li key={outcome} className="flex items-center gap-3 border-t border-border py-4 text-sm font-semibold uppercase">
+                <li
+                  key={outcome}
+                  className="flex items-center gap-3 border-t border-border py-4 text-sm font-semibold uppercase"
+                >
                   <Check className="size-4 shrink-0 text-gold" aria-hidden="true" /> {outcome}
                 </li>
               ))}
             </ul>
+            <Link
+              to="/services"
+              className="mt-10 inline-flex items-center gap-3 border-b border-gold pb-1 text-sm font-bold uppercase text-gold"
+            >
+              Rate & process <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
+
+          <figure className="relative overflow-hidden border border-border bg-elevated">
+            <img
+              src={vocalistImage}
+              alt="Vocalist performing at a professional studio microphone"
+              width={1200}
+              height={1600}
+              loading="lazy"
+              className="h-full min-h-[420px] w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-owner-veil" aria-hidden="true" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-7 text-xs font-semibold uppercase text-silver sm:p-9">
+              Private professional studio · Plano, TX
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section id="proof" className="bg-foreground py-24 text-background lg:py-32">
+      {/* PROOF */}
+      <section className="bg-foreground py-24 text-background lg:py-32">
         <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
           <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
             <div>
               <p className="text-xs font-semibold uppercase text-oxblood">Student result</p>
-              <p className="mt-4 font-display text-5xl uppercase leading-none sm:text-6xl">The moment the voice stops holding you back.</p>
+              <p className="mt-4 font-display text-5xl uppercase leading-none sm:text-6xl">
+                The moment the voice stops holding you back.
+              </p>
+              <Link
+                to="/testimonials"
+                className="mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase text-background/70 hover:text-background"
+              >
+                Read all testimonials <ArrowRight className="size-3.5" aria-hidden="true" />
+              </Link>
             </div>
             <blockquote className="border-l border-gold pl-7 sm:pl-12">
-              <p className="font-display text-4xl uppercase leading-tight text-background sm:text-5xl">
-                “I stopped hoping the note would be there. I knew it would be there.”
+              <Quote className="mb-6 size-8 text-gold" aria-hidden="true" />
+              <p className="font-display text-4xl uppercase leading-tight sm:text-5xl">
+                “He has transformed me from a vocalist to a true singer. My range and stamina have never been
+                better.”
               </p>
-              <footer className="mt-8 text-sm font-semibold uppercase text-background/60">Dallas Voice Coach student · Performance program</footer>
+              <footer className="mt-8 text-sm font-semibold uppercase text-background/60">
+                John Kenny · Epic Unplugged, The Elton Johns
+              </footer>
             </blockquote>
           </div>
         </div>
       </section>
 
-      <section id="consultation" className="border-b border-border bg-gold py-24 text-gold-foreground lg:py-32">
+      {/* CTA */}
+      <section className="bg-gold py-24 text-gold-foreground lg:py-32">
         <div className="mx-auto flex max-w-[90rem] flex-col justify-between gap-10 px-5 sm:px-8 lg:flex-row lg:items-end lg:px-12">
           <div className="max-w-4xl">
             <p className="text-xs font-bold uppercase">Your next note starts here</p>
-            <h2 className="mt-5 font-display text-7xl uppercase leading-[0.88] sm:text-8xl lg:text-9xl">Let’s hear what your voice can become.</h2>
+            <h2 className="mt-5 font-display text-7xl uppercase leading-[0.88] sm:text-8xl lg:text-9xl">
+              Let’s hear what your voice can become.
+            </h2>
           </div>
-          <a href="mailto:info@dallasvoicecoach.com?subject=Vocal%20consultation" className="inline-flex h-16 shrink-0 items-center justify-center gap-3 bg-background px-8 text-sm font-bold uppercase text-foreground transition-colors hover:bg-foreground hover:text-background">
-            Request a consultation <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+          <Link
+            to="/contact"
+            className="inline-flex h-16 shrink-0 items-center justify-center gap-3 bg-background px-8 text-sm font-bold uppercase text-foreground transition-colors hover:bg-foreground hover:text-background"
+          >
+            Book a consultation <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
-      <footer className="bg-background py-10">
-        <div className="mx-auto flex max-w-[90rem] flex-col gap-5 px-5 text-xs uppercase text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
-          <span className="font-display text-2xl text-foreground">Dallas Voice Coach</span>
-          <span>World-class voices are built.</span>
-          <span>Dallas · Fort Worth</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
