@@ -147,16 +147,24 @@ function Index() {
 
       <section id="method" className="relative border-b border-border py-24 lg:py-36">
         <div className="mx-auto grid max-w-[90rem] gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-12">
-          <div className="relative min-h-[420px] overflow-hidden border border-border bg-elevated p-8 sm:p-12">
-            <div className="absolute inset-8 border border-border/70" aria-hidden="true" />
-            <div className="absolute left-1/2 top-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/30" aria-hidden="true" />
-            <div className="absolute left-1/2 top-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-silver/20" aria-hidden="true" />
-            <div className="relative flex min-h-[330px] flex-col items-center justify-center text-center">
-              <Mic2 className="size-10 text-gold" aria-hidden="true" />
-              <p className="mt-7 font-display text-6xl uppercase leading-none">Mechanism<br />meets artistry.</p>
-              <p className="mt-5 text-xs font-semibold uppercase text-silver">The Dallas Voice Method</p>
-            </div>
-          </div>
+          <figure className="relative overflow-hidden border border-border bg-elevated">
+            <img
+              src={ownerImage}
+              alt="The founder of Dallas Voice Coach"
+              width={1200}
+              height={810}
+              loading="lazy"
+              className="h-full min-h-[480px] w-full object-cover object-center grayscale"
+            />
+            <div className="absolute inset-0 bg-owner-veil" aria-hidden="true" />
+            <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-7 sm:p-10">
+              <div>
+                <p className="text-xs font-bold uppercase text-gold">Founder & lead coach</p>
+                <p className="mt-3 max-w-sm font-display text-5xl uppercase leading-[0.9]">The authority behind the method.</p>
+              </div>
+              <Mic2 className="mb-2 size-8 shrink-0 text-gold" aria-hidden="true" />
+            </figcaption>
+          </figure>
 
           <div className="lg:pl-10">
             <p className="eyebrow">Not just song coaching</p>
