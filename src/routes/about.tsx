@@ -128,12 +128,12 @@ function AboutPage() {
           <h2 className="max-w-3xl font-display text-6xl uppercase leading-[0.9] sm:text-7xl">
             Start with a conversation about your voice.
           </h2>
-          <Link
-            to="/contact"
+          <a
+            href="tel:+12143171090"
             className="inline-flex h-16 shrink-0 items-center gap-3 bg-background px-8 text-sm font-bold uppercase text-foreground transition-colors hover:bg-foreground hover:text-background"
           >
-            Contact the studio <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
+            Call or text 214-317-1090 <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
