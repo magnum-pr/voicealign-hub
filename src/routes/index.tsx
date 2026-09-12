@@ -86,7 +86,7 @@ function Index() {
                 href="tel:+12143171090"
                 className="inline-flex h-14 items-center gap-3 bg-gold px-7 text-sm font-bold uppercase text-gold-foreground transition-colors hover:bg-gold-bright"
               >
-                <Phone className="size-4" aria-hidden="true" /> Call 214-317-1090
+                <Phone className="size-4" aria-hidden="true" /> Call or text 214-317-1090
               </a>
               <Link
                 to="/services"
@@ -258,12 +258,12 @@ function Index() {
               Let’s hear what your voice can become.
             </h2>
           </div>
-          <Link
-            to="/contact"
+          <a
+            href="tel:+12143171090"
             className="inline-flex h-16 shrink-0 items-center justify-center gap-3 bg-background px-8 text-sm font-bold uppercase text-foreground transition-colors hover:bg-foreground hover:text-background"
           >
-            Book a consultation <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
+            Call or text 214-317-1090 <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 

@@ -4,8 +4,8 @@ import { Mic2, Phone } from "lucide-react";
 const links = [
   { to: "/about", label: "The Team" },
   { to: "/services", label: "Coaching" },
-  { to: "/testimonials", label: "Results" },
-  { to: "/contact", label: "Studio" },
+  { to: "/testimonials", label: "Testimonials" },
+  { to: "/process", label: "Process" },
 ] as const;
 
 export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
@@ -46,7 +46,9 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           className="inline-flex items-center gap-2 border border-gold bg-gold px-5 py-3 text-xs font-bold uppercase text-gold-foreground transition-colors hover:bg-gold-bright"
         >
           <Phone className="size-3.5" aria-hidden="true" />
-          214-317-1090
+          <span className="hidden sm:inline">Call or text</span>
+          <span className="sm:hidden">Text</span>
+          <span>214-317-1090</span>
         </a>
       </div>
     </header>

@@ -116,8 +116,15 @@ function ServicesPage() {
               href="tel:+12143171090"
               className="mt-7 inline-flex h-14 w-full items-center justify-center gap-3 bg-gold text-sm font-bold uppercase text-gold-foreground transition-colors hover:bg-gold-bright"
             >
-              <Phone className="size-4" aria-hidden="true" /> 214-317-1090
+              <Phone className="size-4" aria-hidden="true" /> Call or text 214-317-1090
             </a>
+            <Link
+              to="/process"
+              search={{ tab: "ideal-voice" }}
+              className="mt-5 block text-center text-xs font-bold uppercase text-gold hover:text-gold-bright"
+            >
+              Learn more about the Ideal Voice
+            </Link>
           </div>
         </div>
       </section>
@@ -141,7 +148,10 @@ function ServicesPage() {
           </div>
           <p className="mt-10 max-w-3xl border-l border-gold pl-6 text-lg leading-relaxed text-muted-foreground">
             Every step is explained and illustrated with the coach's own voice. Building the vocal concept in
-            your mind dramatically increases the speed and traction of your learning.
+            your mind dramatically increases the speed and traction of your learning.{" "}
+            <Link to="/process" search={{ tab: "rate-process" }} className="font-semibold text-gold hover:text-gold-bright">
+              Read the full Rate & Process explanation.
+            </Link>
           </p>
         </div>
       </section>
@@ -190,12 +200,12 @@ function ServicesPage() {
           <h2 className="max-w-3xl font-display text-6xl uppercase leading-[0.9] sm:text-7xl">
             Ready to hear what changes in a month?
           </h2>
-          <Link
-            to="/contact"
+          <a
+            href="tel:+12143171090"
             className="inline-flex h-16 shrink-0 items-center gap-3 bg-background px-8 text-sm font-bold uppercase text-foreground transition-colors hover:bg-foreground hover:text-background"
           >
-            Book your first lesson <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
+            Call or text 214-317-1090 <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
