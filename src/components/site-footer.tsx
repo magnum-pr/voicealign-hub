@@ -15,8 +15,8 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-muted-foreground">
             <li><Link to="/about" className="hover:text-gold">Meet the team</Link></li>
             <li><Link to="/services" className="hover:text-gold">Coaching & rates</Link></li>
-            <li><Link to="/testimonials" className="hover:text-gold">Student results</Link></li>
-            <li><Link to="/contact" className="hover:text-gold">Studio & contact</Link></li>
+            <li><Link to="/testimonials" className="hover:text-gold">Testimonials</Link></li>
+            <li><Link to="/process" className="hover:text-gold">Rate & process</Link></li>
           </ul>
         </nav>
         <div className="text-sm text-muted-foreground">
@@ -26,7 +26,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="text-sm text-muted-foreground">
-          <p className="eyebrow">Call</p>
+          <p className="eyebrow">Call or text</p>
           <a href="tel:+12143171090" className="mt-4 block font-display text-3xl text-foreground hover:text-gold">
             214-317-1090
           </a>
