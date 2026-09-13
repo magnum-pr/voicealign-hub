@@ -1,10 +1,16 @@
 import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
 import { ArrowRight, Check, Phone } from "lucide-react";
+import { z } from "zod";
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
+const processSearchSchema = z.object({
+  tab: z.enum(["rate-process", "ideal-voice"]).optional(),
+});
+
 export const Route = createFileRoute("/process")({
+  validateSearch: processSearchSchema,
   head: () => ({
     meta: [
       { title: "Rate, Process & The Ideal Voice | Dallas Voice Coach" },
